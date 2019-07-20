@@ -2,12 +2,6 @@
 Clone of the 2048 game
 """
 
-"""
-Things to improve:
-    1. GUI is to be added
-    2. check_if_lost() has to be corrected
-"""
-
 import random
 
 # Directions
@@ -225,6 +219,16 @@ class TwentyFortyEight:
             for col in range(self.width):
                 if self.grid[row][col] == 0:
                     flag = 0
+        for row in range(self.height-1):
+            for col in range(self.width-1):
+                if self.grid[row][col] == self.grid[row+1][col] or self.grid[row][col] == self.grid[row][col+1]:
+                    flag = 0
+        for col in range(self.width-1):
+            if self.grid[self.height-1][col] == self.grid[self.height-1][col+1]:
+                flag = 0
+        for row in range(self.height-1):
+            if self.grid[row][self.width-1] == self.grid[row+1][self.width-1]:
+                flag = 0
         return flag
         
 
