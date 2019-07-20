@@ -124,7 +124,7 @@ class TwentyFortyEight:
             for col in range(self.width):
                 temp = self.grid[row][col]
                 str_grid += str(temp)
-                str_grid += "  "
+                str_grid += "   "
             str_grid += '\n'
         return str_grid
 
